@@ -43,7 +43,7 @@ public class InventoryTagsController {
         return this.inventoryTags;
     }
 
-    @RequestMapping(value = "{/id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public List<InventoryTag> deleteInventoryTag(@PathVariable Long id) {
         InventoryTag deleteInventoryTag = this.inventoryTags.stream().filter(i -> i.getId() == id).findFirst().orElse(null);
         if (deleteInventoryTag != null) {

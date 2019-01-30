@@ -43,7 +43,7 @@ public class ContractDataController {
         return this.contractData;
     }
 
-    @RequestMapping(value = "{/id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public List<ContractData> deleteContractData(@PathVariable Long id) {
         ContractData deleteContractData = this.contractData.stream().filter(i -> i.getId() == id).findFirst().orElse(null);
         if (deleteContractData != null) {
@@ -51,7 +51,6 @@ public class ContractDataController {
         }
         return this.contractData;
     }
-    
 
     List<ContractData> buildContractDataList() {
         List<ContractData> contractData = new ArrayList<>();
