@@ -1,7 +1,5 @@
 package com.catalogueattributemanager.catalogueattributebackenddemo.models;
 
-import java.util.Date;
-
 public class InventoryTag {
 
     private Long id;
