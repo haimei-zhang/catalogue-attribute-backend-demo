@@ -12,7 +12,7 @@ import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
-@RequestMapping(value = "/inventory-tag/audit-log")
+@RequestMapping(value = "/inventory-tags/audit-log")
 public class AuditLogController {
     private List<AuditLog> auditLogs = new ArrayList<>();
 
