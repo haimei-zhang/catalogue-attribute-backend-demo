@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@CrossOrigin(origins = "http://ew1-dev.sci-ware-customer.com|http://localhost:4200")
+@CrossOrigin(origins = {"http://ew1-dev.sci-ware-customer.com", "http://localhost:4200"})
 @RestController
 @RequestMapping(value = "/inventory-tags")
 public class InventoryTagsController {
