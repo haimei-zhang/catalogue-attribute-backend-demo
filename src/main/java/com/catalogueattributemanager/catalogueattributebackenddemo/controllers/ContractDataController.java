@@ -27,7 +27,9 @@ public class ContractDataController {
         Long nextId = 0L;
         if (this.contractData.size() != 0) {
             ContractData lastContractData = this.contractData.stream().skip(this.contractData.size() - 1).findFirst().orElse(null);
-            nextId = lastContractData.getId() + 1;
+            // nextId = lastContractData.getId() + 1;
+            nextId = new Long(this.contractData.size() + 1);
+            // nextId = Long.valueOf(this.contractData.size());
         }
 
         contractDataItem.setId(nextId);

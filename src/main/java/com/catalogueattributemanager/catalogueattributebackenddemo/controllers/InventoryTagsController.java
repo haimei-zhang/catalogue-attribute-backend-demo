@@ -27,7 +27,8 @@ public class InventoryTagsController {
         Long nextId = 0L;
         if (this.inventoryTags.size() != 0) {
             InventoryTag lastInventoryTag = this.inventoryTags.stream().skip(this.inventoryTags.size() - 1).findFirst().orElse(null);
-            nextId = lastInventoryTag.getId() + 1;
+            // nextId = lastInventoryTag.getId() + 1;
+            nextId = new Long(this.inventoryTags.size() + 1);
         }
 
         inventoryTag.setId(nextId);
