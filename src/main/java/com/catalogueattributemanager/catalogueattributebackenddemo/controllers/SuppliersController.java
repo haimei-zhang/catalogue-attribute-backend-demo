@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:4200")
+// @CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://ew1-dev.sci-ware-customer.com")
 @RestController
 @RequestMapping(value = "/suppliers")
 public class SuppliersController {
