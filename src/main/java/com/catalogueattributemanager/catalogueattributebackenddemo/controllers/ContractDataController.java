@@ -32,7 +32,7 @@ public class ContractDataController {
         }
 
         contractDataItem.setId(nextId);
-        this.contractData.add(contractDataItem);
+        this.contractData.add(0, contractDataItem);
         return this.contractData;
     }
 

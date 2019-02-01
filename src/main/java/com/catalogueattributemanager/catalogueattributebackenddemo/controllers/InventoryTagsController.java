@@ -32,7 +32,7 @@ public class InventoryTagsController {
         }
 
         inventoryTag.setId(nextId);
-        this.inventoryTags.add(inventoryTag);
+        this.inventoryTags.add(0, inventoryTag);
         return this.inventoryTags;
     }
 
