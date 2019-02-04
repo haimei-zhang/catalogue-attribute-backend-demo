@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@CrossOrigin(origins = {"http://ew1-dev.sci-ware-customer.com", "http://localhost:4200"})
+@CrossOrigin
 @RestController
 @RequestMapping(value = "/contract-data")
 public class ContractDataController {
@@ -23,7 +23,7 @@ public class ContractDataController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public List<ContractData> saveContractData(@RequestBody ContractData contractDataItem) {
+    public ContractData saveContractData(@RequestBody ContractData contractDataItem) {
         Long nextId = 0L;
         if (this.contractData.size() != 0) {
             ContractData lastContractData = this.contractData.stream().skip(this.contractData.size() - 1).findFirst().orElse(null);
@@ -34,7 +34,7 @@ public class ContractDataController {
 
         contractDataItem.setId(nextId);
         this.contractData.add(0, contractDataItem);
-        return this.contractData;
+        return contractDataItem;
     }
 
     @RequestMapping(method = RequestMethod.PUT)

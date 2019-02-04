@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
 
-@CrossOrigin(origins = {"http://ew1-dev.sci-ware-customer.com", "http://localhost:4200"})
+@CrossOrigin
 @RestController
 @RequestMapping(value = "/contract-data/audit-log")
 public class AuditLogController2 {
