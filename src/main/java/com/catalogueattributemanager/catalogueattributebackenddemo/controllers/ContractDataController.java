@@ -6,7 +6,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+<<<<<<< HEAD
 @CrossOrigin(origins = {"http://ew1-dev.sci-ware-customer.com","http://localhost:4200"})
+=======
+@CrossOrigin
+>>>>>>> 2390fda0bbc50f21c172cdec84199c022ad9fc4f
 @RestController
 @RequestMapping(value = "/contract-data")
 public class ContractDataController {
@@ -23,16 +27,18 @@ public class ContractDataController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public List<ContractData> saveContractData(@RequestBody ContractData contractDataItem) {
+    public ContractData saveContractData(@RequestBody ContractData contractDataItem) {
         Long nextId = 0L;
         if (this.contractData.size() != 0) {
             ContractData lastContractData = this.contractData.stream().skip(this.contractData.size() - 1).findFirst().orElse(null);
-            nextId = lastContractData.getId() + 1;
+            // nextId = lastContractData.getId() + 1;
+            nextId = new Long(this.contractData.size() + 1);
+            // nextId = Long.valueOf(this.contractData.size());
         }
 
         contractDataItem.setId(nextId);
         this.contractData.add(0, contractDataItem);
-        return this.contractData;
+        return contractDataItem;
     }
 
     @RequestMapping(method = RequestMethod.PUT)

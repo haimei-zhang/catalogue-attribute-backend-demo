@@ -6,7 +6,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+<<<<<<< HEAD
 @CrossOrigin(origins = {"http://ew1-dev.sci-ware-customer.com","http://localhost:4200"})
+=======
+@CrossOrigin
+>>>>>>> 2390fda0bbc50f21c172cdec84199c022ad9fc4f
 @RestController
 @RequestMapping(value = "/inventory-tags")
 public class InventoryTagsController {
@@ -27,7 +31,8 @@ public class InventoryTagsController {
         Long nextId = 0L;
         if (this.inventoryTags.size() != 0) {
             InventoryTag lastInventoryTag = this.inventoryTags.stream().skip(this.inventoryTags.size() - 1).findFirst().orElse(null);
-            nextId = lastInventoryTag.getId() + 1;
+            // nextId = lastInventoryTag.getId() + 1;
+            nextId = new Long(this.inventoryTags.size() + 1);
         }
 
         inventoryTag.setId(nextId);
