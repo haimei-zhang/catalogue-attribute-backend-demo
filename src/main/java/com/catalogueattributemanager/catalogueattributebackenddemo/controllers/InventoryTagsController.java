@@ -6,11 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-<<<<<<< HEAD
-@CrossOrigin(origins = {"http://ew1-dev.sci-ware-customer.com","http://localhost:4200"})
-=======
 @CrossOrigin
->>>>>>> 2390fda0bbc50f21c172cdec84199c022ad9fc4f
 @RestController
 @RequestMapping(value = "/inventory-tags")
 public class InventoryTagsController {
@@ -60,17 +56,11 @@ public class InventoryTagsController {
     List<InventoryTag> buildInventoryTags() {
         List<InventoryTag> inventoryTags = new ArrayList<>();
 
-        InventoryTag tag1 = buildInventoryTag(1L, "MATMAN 1", "Inventory Management", "Used to identify items to be submitted to/removed from the MATMAN inventory management system", "01 Aug, 2018");
-        InventoryTag tag2 = buildInventoryTag(2L, "MATMAN 2", "Inventory Management", "Used to identify items to be submitted to/removed from the MATMAN inventory management system", "02 Aug, 2018");
-        InventoryTag tag3 = buildInventoryTag(3L, "MATMAN 3", "Inventory Management", "Used to identify items to be submitted to/removed from the MATMAN inventory management system", "03 Sep, 2018");
-        InventoryTag tag4 = buildInventoryTag(4L, "MATMAN 4", "Inventory Management", "Used to identify items to be submitted to/removed from the MATMAN inventory management system", "01 Oct, 2018");
-        InventoryTag tag5 = buildInventoryTag(5L, "MATMAN 5", "Inventory Management", "Used to identify items to be submitted to/removed from the MATMAN inventory management system", "01 Jan, 2019");
+        InventoryTag tag1 = buildInventoryTag(1L, "MATMAN", "Inventory Management", "Used to identify items to be submitted to/removed from the MATMAN inventory management system", "01 Aug, 2018");
+        InventoryTag tag2 = buildInventoryTag(2L, "Third Party System", "Inventory Management", "Used to identify items to be submitted to/removed from a third party inventory system", "02 Aug, 2018");
 
         inventoryTags.add(tag1);
         inventoryTags.add(tag2);
-        inventoryTags.add(tag3);
-        inventoryTags.add(tag4);
-        inventoryTags.add(tag5);
 
         return inventoryTags;
 

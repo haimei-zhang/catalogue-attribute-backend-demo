@@ -6,11 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-<<<<<<< HEAD
-@CrossOrigin(origins = {"http://ew1-dev.sci-ware-customer.com","http://localhost:4200"})
-=======
 @CrossOrigin
->>>>>>> 2390fda0bbc50f21c172cdec84199c022ad9fc4f
 @RestController
 @RequestMapping(value = "/contract-data")
 public class ContractDataController {
