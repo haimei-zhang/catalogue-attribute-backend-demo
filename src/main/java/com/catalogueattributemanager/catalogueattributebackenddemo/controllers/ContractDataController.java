@@ -42,7 +42,7 @@ public class ContractDataController {
         ContractData modifiedContractData = this.contractData.stream().filter(i -> i.getId() == contractDataItem.getId()).findFirst().orElse(null);
         modifiedContractData.setName(contractDataItem.getName());
         modifiedContractData.setReference(contractDataItem.getReference());
-        modifiedContractData.setType(contractDataItem.getType());
+        modifiedContractData.setAssignType(contractDataItem.getAssignType());
         modifiedContractData.setDescription(contractDataItem.getDescription());
         modifiedContractData.setStartDate(contractDataItem.getStartDate());
         modifiedContractData.setEndDate(contractDataItem.getEndDate());
