@@ -4,6 +4,7 @@ import com.catalogueattributemanager.catalogueattributebackenddemo.models.Invent
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @CrossOrigin
@@ -26,9 +27,7 @@ public class InventoryTagsController {
     public List<InventoryTag> saveInventoryTag(@RequestBody InventoryTag inventoryTag) {
         Long nextId = 0L;
         if (this.inventoryTags.size() != 0) {
-            InventoryTag lastInventoryTag = this.inventoryTags.stream().skip(this.inventoryTags.size() - 1).findFirst().orElse(null);
-            // nextId = lastInventoryTag.getId() + 1;
-            nextId = new Long(this.inventoryTags.size() + 1);
+            nextId = new Date().getTime();
         }
 
         inventoryTag.setId(nextId);
