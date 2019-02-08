@@ -46,6 +46,7 @@ public class ContractDataController {
         modifiedContractData.setDescription(contractDataItem.getDescription());
         modifiedContractData.setStartDate(contractDataItem.getStartDate());
         modifiedContractData.setEndDate(contractDataItem.getEndDate());
+        modifiedContractData.setFileUrl(contractDataItem.getFileUrl());
         modifiedContractData.setTargetSpend(contractDataItem.getTargetSpend());
         modifiedContractData.setExpiryNotification(contractDataItem.isExpiryNotification());
         modifiedContractData.setExpiryNotificationFrom(contractDataItem.getExpiryNotificationFrom());
