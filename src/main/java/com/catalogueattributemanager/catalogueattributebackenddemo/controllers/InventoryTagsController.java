@@ -37,7 +37,7 @@ public class InventoryTagsController {
 
     @RequestMapping(method = RequestMethod.PUT)
     public List<InventoryTag> updateInventoryTag(@RequestBody InventoryTag inventoryTag) {
-        InventoryTag modifiedInventoryTag = this.inventoryTags.stream().filter(i -> i.getId() == inventoryTag.getId()).findFirst().orElse(null);
+        InventoryTag modifiedInventoryTag = this.inventoryTags.stream().filter(i -> i.getId().equals(inventoryTag.getId())).findFirst().orElse(null);
         modifiedInventoryTag.setName(inventoryTag.getName());
         modifiedInventoryTag.setDescription(inventoryTag.getDescription());
         return this.inventoryTags;
@@ -45,7 +45,7 @@ public class InventoryTagsController {
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public List<InventoryTag> deleteInventoryTag(@PathVariable Long id) {
-        InventoryTag deleteInventoryTag = this.inventoryTags.stream().filter(i -> i.getId() == id).findFirst().orElse(null);
+        InventoryTag deleteInventoryTag = this.inventoryTags.stream().filter(i -> i.getId().equals(id)).findFirst().orElse(null);
         if (deleteInventoryTag != null) {
             this.inventoryTags.remove(deleteInventoryTag);
         }

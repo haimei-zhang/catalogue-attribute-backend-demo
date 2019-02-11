@@ -40,7 +40,7 @@ public class ContractDataController {
 
     @RequestMapping(method = RequestMethod.PUT)
     public List<ContractData> updateContractData(@RequestBody ContractData contractDataItem) {
-        ContractData modifiedContractData = this.contractData.stream().filter(i -> i.getId() == contractDataItem.getId()).findFirst().orElse(null);
+        ContractData modifiedContractData = this.contractData.stream().filter(i -> i.getId().equals(contractDataItem.getId())).findFirst().orElse(null);
         modifiedContractData.setName(contractDataItem.getName());
         modifiedContractData.setReference(contractDataItem.getReference());
         modifiedContractData.setAssignType(contractDataItem.getAssignType());
@@ -56,7 +56,7 @@ public class ContractDataController {
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public List<ContractData> deleteContractData(@PathVariable Long id) {
-        ContractData deleteContractData = this.contractData.stream().filter(i -> i.getId() == id).findFirst().orElse(null);
+        ContractData deleteContractData = this.contractData.stream().filter(i -> i.getId().equals(id)).findFirst().orElse(null);
         if (deleteContractData != null) {
             this.contractData.remove(deleteContractData);
         }
