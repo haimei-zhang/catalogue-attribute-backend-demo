@@ -5,6 +5,7 @@ public class Attachment {
     private String fileName;
     private String fileUrl;
     private String comment;
+    private Long id;
 
     public String getFileName() {
         return fileName;
@@ -28,5 +29,13 @@ public class Attachment {
 
     public void setComment(String comment) {
         this.comment = comment;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

@@ -52,6 +52,7 @@ public class ContractDataController {
         modifiedContractData.setTargetSpend(contractDataItem.getTargetSpend());
         modifiedContractData.setExpiryNotification(contractDataItem.isExpiryNotification());
         modifiedContractData.setExpiryNotificationFrom(contractDataItem.getExpiryNotificationFrom());
+        modifiedContractData.setAttachment(contractDataItem.getAttachment());
         return this.contractData;
     }
 
@@ -106,9 +107,9 @@ public class ContractDataController {
 
     List<Attachment> buildAttachments() {
         List<Attachment> attachments = new ArrayList<>();
-        Attachment attachment1 = buildAttachment("www.test.com", "test file 1", "comment 1");
-        Attachment attachment2 = buildAttachment("www.test.com", "test file 2", "comment 2");
-        Attachment attachment3 = buildAttachment("www.test.com", "test file 3", "comment 3");
+        Attachment attachment1 = buildAttachment("www.test.com", "test file 1", "comment 1", 1L);
+        Attachment attachment2 = buildAttachment("www.test.com", "test file 2", "comment 2", 2L);
+        Attachment attachment3 = buildAttachment("www.test.com", "test file 3", "comment 3", 3L);
 
         attachments.add(attachment1);
         attachments.add(attachment2);
@@ -117,11 +118,12 @@ public class ContractDataController {
         return attachments;
     }
 
-    Attachment buildAttachment(String fileUrl, String fileName, String comment) {
+    Attachment buildAttachment(String fileUrl, String fileName, String comment, Long id) {
         Attachment attachment = new Attachment();
         attachment.setFileUrl(fileUrl);
         attachment.setComment(comment);
         attachment.setFileName(fileName);
+        attachment.setId(id);
         return attachment;
     }
 }
