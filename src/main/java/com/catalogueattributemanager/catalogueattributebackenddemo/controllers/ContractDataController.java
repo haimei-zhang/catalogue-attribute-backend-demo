@@ -1,5 +1,6 @@
 package com.catalogueattributemanager.catalogueattributebackenddemo.controllers;
 
+import com.catalogueattributemanager.catalogueattributebackenddemo.models.Attachment;
 import com.catalogueattributemanager.catalogueattributebackenddemo.models.ContractData;
 import org.springframework.web.bind.annotation.*;
 
@@ -66,11 +67,13 @@ public class ContractDataController {
     List<ContractData> buildContractDataList() {
         List<ContractData> contractData = new ArrayList<>();
 
-        ContractData contractData1 = buildContractData(1L, "CONTRACT", "DEF456", "Contract Data", "supplier", "Used to identify items to be submitted to/removed from the MATMAN inventory management system", "Fri Jan 11 2019 13:29:02 GMT+0000 (Greenwich Mean Time)", "Fri Oct 11 2020 13:29:02 GMT+0000 (Greenwich Mean Time)", "TEST Supplier 1", 123, 1000, "https://www.test.com/", true, "Fri Jan 11 2020 13:29:02 GMT+0000 (Greenwich Mean Time)");
-        ContractData contractData2 = buildContractData(2L, "CONTRACT 2", "ABC123", "Contract Data", "items", "Used to identify items to be submitted to/removed from the MATMAN inventory management system", "Fri Feb 11 2019 13:29:02 GMT+0000 (Greenwich Mean Time)", "Fri Sep 11 2020 13:29:02 GMT+0000 (Greenwich Mean Time)", "TEST Supplier 2", 123, 1000, "https://www.test.com/", true, "Fri Jan 12 2020 13:29:02 GMT+0000 (Greenwich Mean Time)");
-        ContractData contractData3 = buildContractData(3L, "CONTRACT 3", "GHI456", "Contract Data", "supplier", "Used to identify items to be submitted to/removed from the MATMAN inventory management system", "Fri Mar 11 2019 13:29:02 GMT+0000 (Greenwich Mean Time)", "Fri Nov 11 2020 13:29:02 GMT+0000 (Greenwich Mean Time)", "Supplier 3", 123, 2000, "https://www.test.com/", true, "Fri Feb 11 2020 13:29:02 GMT+0000 (Greenwich Mean Time)");
-        ContractData contractData4 = buildContractData(4L, "CONTRACT 4", "JKL789", "Contract Data", "items", "Used to identify items to be submitted to/removed from the MATMAN inventory management system", "Fri Feb 11 2020 13:29:02 GMT+0000 (Greenwich Mean Time)", "Fri Feb 11 2020 13:29:02 GMT+0000 (Greenwich Mean Time)", "TEST Supplier 123", 123, 12000, "https://www.test.com/", true, "Fri Mar 13 2020 13:29:02 GMT+0000 (Greenwich Mean Time)");
-        ContractData contractData5 = buildContractData(5L, "CONTRACT 5", "MNO838", "Contract Data", "items", "Used to identify items to be submitted to/removed from the MATMAN inventory management system", "Fri Oct 11 2019 13:29:02 GMT+0000 (Greenwich Mean Time)", "Fri Mar 11 2020 13:29:02 GMT+0000 (Greenwich Mean Time)", "Supplier 333", 123, 2500, "https://www.test.com/", true, "Fri Sep 11 2021 13:29:02 GMT+0000 (Greenwich Mean Time)");
+        List<Attachment> attachments = buildAttachments();
+
+        ContractData contractData1 = buildContractData(1L, "CONTRACT", "DEF456", "Contract Data", "supplier", "Used to identify items to be submitted to/removed from the MATMAN inventory management system", "Fri Jan 11 2019 13:29:02 GMT+0000 (Greenwich Mean Time)", "Fri Oct 11 2020 13:29:02 GMT+0000 (Greenwich Mean Time)", "TEST Supplier 1", 123, 1000, "https://www.test.com/", true, "Fri Jan 11 2020 13:29:02 GMT+0000 (Greenwich Mean Time)", attachments);
+        ContractData contractData2 = buildContractData(2L, "CONTRACT 2", "ABC123", "Contract Data", "items", "Used to identify items to be submitted to/removed from the MATMAN inventory management system", "Fri Feb 11 2019 13:29:02 GMT+0000 (Greenwich Mean Time)", "Fri Sep 11 2020 13:29:02 GMT+0000 (Greenwich Mean Time)", "TEST Supplier 2", 123, 1000, "https://www.test.com/", true, "Fri Jan 12 2020 13:29:02 GMT+0000 (Greenwich Mean Time)", attachments);
+        ContractData contractData3 = buildContractData(3L, "CONTRACT 3", "GHI456", "Contract Data", "supplier", "Used to identify items to be submitted to/removed from the MATMAN inventory management system", "Fri Mar 11 2019 13:29:02 GMT+0000 (Greenwich Mean Time)", "Fri Nov 11 2020 13:29:02 GMT+0000 (Greenwich Mean Time)", "Supplier 3", 123, 2000, "https://www.test.com/", true, "Fri Feb 11 2020 13:29:02 GMT+0000 (Greenwich Mean Time)", attachments);
+        ContractData contractData4 = buildContractData(4L, "CONTRACT 4", "JKL789", "Contract Data", "items", "Used to identify items to be submitted to/removed from the MATMAN inventory management system", "Fri Feb 11 2020 13:29:02 GMT+0000 (Greenwich Mean Time)", "Fri Feb 11 2020 13:29:02 GMT+0000 (Greenwich Mean Time)", "TEST Supplier 123", 123, 12000, "https://www.test.com/", true, "Fri Mar 13 2020 13:29:02 GMT+0000 (Greenwich Mean Time)", attachments);
+        ContractData contractData5 = buildContractData(5L, "CONTRACT 5", "MNO838", "Contract Data", "items", "Used to identify items to be submitted to/removed from the MATMAN inventory management system", "Fri Oct 11 2019 13:29:02 GMT+0000 (Greenwich Mean Time)", "Fri Mar 11 2020 13:29:02 GMT+0000 (Greenwich Mean Time)", "Supplier 333", 123, 2500, "https://www.test.com/", true, "Fri Sep 11 2021 13:29:02 GMT+0000 (Greenwich Mean Time)", attachments);
         
         contractData.add(contractData1);
         contractData.add(contractData2);
@@ -81,7 +84,7 @@ public class ContractDataController {
         return contractData;
     }
 
-    ContractData buildContractData(Long id, String name, String reference, String type, String assignType, String description, String startDate, String endDate, String supplier, Integer supplierId, Integer targetSpend, String fileUrl, Boolean expiryNotification, String expiryNotificationFrom) {
+    ContractData buildContractData(Long id, String name, String reference, String type, String assignType, String description, String startDate, String endDate, String supplier, Integer supplierId, Integer targetSpend, String fileUrl, Boolean expiryNotification, String expiryNotificationFrom, List<Attachment> attachments) {
         ContractData contractData = new ContractData();
         contractData.setId(id);
         contractData.setName(name);
@@ -97,6 +100,28 @@ public class ContractDataController {
         contractData.setFileUrl(fileUrl);
         contractData.setExpiryNotification(expiryNotification);
         contractData.setExpiryNotificationFrom(expiryNotificationFrom);
+        contractData.setAttachment(attachments);
         return contractData;
+    }
+
+    List<Attachment> buildAttachments() {
+        List<Attachment> attachments = new ArrayList<>();
+        Attachment attachment1 = buildAttachment("www.test.com", "test file 1", "comment 1");
+        Attachment attachment2 = buildAttachment("www.test.com", "test file 2", "comment 2");
+        Attachment attachment3 = buildAttachment("www.test.com", "test file 3", "comment 3");
+
+        attachments.add(attachment1);
+        attachments.add(attachment2);
+        attachments.add(attachment3);
+
+        return attachments;
+    }
+
+    Attachment buildAttachment(String fileUrl, String fileName, String comment) {
+        Attachment attachment = new Attachment();
+        attachment.setFileUrl(fileUrl);
+        attachment.setComment(comment);
+        attachment.setFileName(fileName);
+        return attachment;
     }
 }

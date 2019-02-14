@@ -33,12 +33,12 @@ public class AuditLogController2 {
         auditLogAction.setType("export");
         auditLogAction.setDownload_link("https://www.test.com");
 
-        AuditLog auditLog1 = buildAuditLog("Fri Jan 11 2019 13:29:02 GMT+0000 (Greenwich Mean Time)", "MATMAN", "Contract Data", "James", auditLogAction, "completed", "Exported all items");
-        AuditLog auditLog2 = buildAuditLog("Thu Jan 10 2019 13:29:02 GMT+0000 (Greenwich Mean Time)", "MATMAN", "Contract Data", "Bob", auditLogAction, "Pending", "Exported all items");
-        AuditLog auditLog3 = buildAuditLog("Wed Jan 9 2019 13:29:02 GMT+0000 (Greenwich Mean Time)", "MATMAN", "Contract Data", "Andy", auditLogAction, "completed", "Exported all items");
-        AuditLog auditLog4 = buildAuditLog("Wed Dec 19 2018 13:29:02 GMT+0000 (Greenwich Mean Time)", "MATMAN", "Contract Data", "Chris", auditLogAction, "Pending", "Exported all items");
-        AuditLog auditLog5 = buildAuditLog("Fri Jan 25 2019 13:29:02 GMT+0000 (Greenwich Mean Time)", "MATMAN", "Contract Data", "Sally", auditLogAction, "completed", "Exported all items");
-        AuditLog auditLog6 = buildAuditLog("Fri Jan 11 2019 13:29:02 GMT+0000 (Greenwich Mean Time)", "MATMAN", "Contract Data", "Tom", auditLogAction, "completed", "Exported all items");
+        AuditLog auditLog1 = buildAuditLog("Fri Jan 11 2019 13:29:02 GMT+0000 (Greenwich Mean Time)", "MATMAN", "Contract Data", "James", auditLogAction, "COMPLETED", "Exported all items");
+        AuditLog auditLog2 = buildAuditLog("Thu Jan 10 2019 13:29:02 GMT+0000 (Greenwich Mean Time)", "MATMAN", "Contract Data", "Bob", auditLogAction, "COMPLETED_WITH_ERRORS", "Exported all items");
+        AuditLog auditLog3 = buildAuditLog("Wed Jan 9 2019 13:29:02 GMT+0000 (Greenwich Mean Time)", "MATMAN", "Contract Data", "Andy", auditLogAction, "REQUESTED", "Exported all items");
+        AuditLog auditLog4 = buildAuditLog("Wed Dec 19 2018 13:29:02 GMT+0000 (Greenwich Mean Time)", "MATMAN", "Contract Data", "Chris", auditLogAction, "FAILED", "Exported all items");
+        AuditLog auditLog5 = buildAuditLog("Fri Jan 25 2019 13:29:02 GMT+0000 (Greenwich Mean Time)", "MATMAN", "Contract Data", "Sally", auditLogAction, "PROCESSING", "Exported all items");
+        AuditLog auditLog6 = buildAuditLog("Fri Jan 11 2019 13:29:02 GMT+0000 (Greenwich Mean Time)", "MATMAN", "Contract Data", "Tom", auditLogAction, "COMPLETED", "Exported all items");
 
         auditLogs.add(auditLog1);
         auditLogs.add(auditLog2);

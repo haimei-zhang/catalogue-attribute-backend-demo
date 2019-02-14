@@ -1,5 +1,7 @@
 package com.catalogueattributemanager.catalogueattributebackenddemo.models;
 
+import java.util.List;
+
 public class ContractData {
 
     private Long id;
@@ -16,6 +18,7 @@ public class ContractData {
     private String fileUrl;
     private Boolean expiryNotification;
     private String expiryNotificationFrom;
+    private List<Attachment> attachment;
 
     public Long getId() {
         return id;
@@ -127,5 +130,17 @@ public class ContractData {
 
     public void setExpiryNotificationFrom(String expiryNotificationFrom) {
         this.expiryNotificationFrom = expiryNotificationFrom;
+    }
+
+    public Boolean getExpiryNotification() {
+        return expiryNotification;
+    }
+
+    public List<Attachment> getAttachment() {
+        return attachment;
+    }
+
+    public void setAttachment(List<Attachment> attachment) {
+        this.attachment = attachment;
     }
 }
