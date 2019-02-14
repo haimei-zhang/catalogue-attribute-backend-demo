@@ -52,7 +52,7 @@ public class ContractDataController {
         modifiedContractData.setTargetSpend(contractDataItem.getTargetSpend());
         modifiedContractData.setExpiryNotification(contractDataItem.isExpiryNotification());
         modifiedContractData.setExpiryNotificationFrom(contractDataItem.getExpiryNotificationFrom());
-        modifiedContractData.setAttachment(contractDataItem.getAttachment());
+        modifiedContractData.setAttachments(contractDataItem.getAttachments());
         return this.contractData;
     }
 
@@ -101,7 +101,7 @@ public class ContractDataController {
         contractData.setFileUrl(fileUrl);
         contractData.setExpiryNotification(expiryNotification);
         contractData.setExpiryNotificationFrom(expiryNotificationFrom);
-        contractData.setAttachment(attachments);
+        contractData.setAttachments(attachments);
         return contractData;
     }
 

@@ -18,7 +18,7 @@ public class ContractData {
     private String fileUrl;
     private Boolean expiryNotification;
     private String expiryNotificationFrom;
-    private List<Attachment> attachment;
+    private List<Attachment> attachments;
 
     public Long getId() {
         return id;
@@ -136,11 +136,11 @@ public class ContractData {
         return expiryNotification;
     }
 
-    public List<Attachment> getAttachment() {
-        return attachment;
+    public List<Attachment> getAttachments() {
+        return attachments;
     }
 
-    public void setAttachment(List<Attachment> attachment) {
-        this.attachment = attachment;
+    public void setAttachments(List<Attachment> attachment) {
+        this.attachments = attachment;
     }
 }
