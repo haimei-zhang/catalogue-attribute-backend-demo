@@ -19,6 +19,7 @@ public class ContractData {
     private Boolean expiryNotification;
     private String expiryNotificationFrom;
     private List<Attachment> attachments;
+    private String comment;
 
     public Long getId() {
         return id;
@@ -142,5 +143,13 @@ public class ContractData {
 
     public void setAttachments(List<Attachment> attachment) {
         this.attachments = attachment;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 }
