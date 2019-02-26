@@ -33,12 +33,18 @@ public class AuditLogController2 {
         auditLogAction.setType("export");
         auditLogAction.setDownload_link("https://www.test.com");
 
-        AuditLog auditLog1 = buildAuditLog("Fri Jan 11 2019 13:29:02 GMT+0000 (Greenwich Mean Time)", "MATMAN", "Contract Data", "James", auditLogAction, "COMPLETED", "Exported all items");
-        AuditLog auditLog2 = buildAuditLog("Thu Jan 10 2019 13:29:02 GMT+0000 (Greenwich Mean Time)", "MATMAN", "Contract Data", "Bob", auditLogAction, "COMPLETED_WITH_ERRORS", "Exported all items");
-        AuditLog auditLog3 = buildAuditLog("Wed Jan 9 2019 13:29:02 GMT+0000 (Greenwich Mean Time)", "MATMAN", "Contract Data", "Andy", auditLogAction, "REQUESTED", "Exported all items");
-        AuditLog auditLog4 = buildAuditLog("Wed Dec 19 2018 13:29:02 GMT+0000 (Greenwich Mean Time)", "MATMAN", "Contract Data", "Chris", auditLogAction, "FAILED", "Exported all items");
-        AuditLog auditLog5 = buildAuditLog("Fri Jan 25 2019 13:29:02 GMT+0000 (Greenwich Mean Time)", "MATMAN", "Contract Data", "Sally", auditLogAction, "PROCESSING", "Exported all items");
-        AuditLog auditLog6 = buildAuditLog("Fri Jan 11 2019 13:29:02 GMT+0000 (Greenwich Mean Time)", "MATMAN", "Contract Data", "Tom", auditLogAction, "COMPLETED", "Exported all items");
+        AuditLog auditLog1 = buildAuditLog("Fri Jan 11 2019 13:29:02 GMT+0000 (Greenwich Mean Time)", "CONTRACT",
+                "Contract Data", "James", auditLogAction, "COMPLETED", "Applied to supplier catalogue");
+        AuditLog auditLog2 = buildAuditLog("Thu Jan 10 2019 13:29:02 GMT+0000 (Greenwich Mean Time)", "CONTRACT 2",
+                "Contract Data", "Bob", auditLogAction, "COMPLETED_WITH_ERRORS", "Uploaded items");
+        AuditLog auditLog3 = buildAuditLog("Wed Jan 9 2019 13:29:02 GMT+0000 (Greenwich Mean Time)", "CONTRACT 3",
+                "Contract Data", "Andy", auditLogAction, "REQUESTED", "Exported contracted items");
+        AuditLog auditLog4 = buildAuditLog("Wed Dec 19 2018 13:29:02 GMT+0000 (Greenwich Mean Time)", "CONTRACT 2",
+                "Contract Data", "Chris", auditLogAction, "FAILED", "Exported all items");
+        AuditLog auditLog5 = buildAuditLog("Fri Jan 25 2019 13:29:02 GMT+0000 (Greenwich Mean Time)", "CONTRACT 4",
+                "Contract Data", "Sally", auditLogAction, "PROCESSING", "Uploaded items");
+        AuditLog auditLog6 = buildAuditLog("Fri Jan 11 2019 13:29:02 GMT+0000 (Greenwich Mean Time)", "CONTRACT 5",
+                "Contract Data", "Tom", auditLogAction, "COMPLETED", "Updated contract data");
 
         auditLogs.add(auditLog1);
         auditLogs.add(auditLog2);
@@ -50,7 +56,8 @@ public class AuditLogController2 {
         return auditLogs;
     }
 
-    AuditLog buildAuditLog(String datetime, String tag, String tag_type, String user, AuditLogAction action, String status, String description) {
+    AuditLog buildAuditLog(String datetime, String tag, String tag_type, String user, AuditLogAction action,
+            String status, String description) {
         AuditLog auditLog = new AuditLog();
         auditLog.setDatetime(datetime);
         auditLog.setTag(tag);
