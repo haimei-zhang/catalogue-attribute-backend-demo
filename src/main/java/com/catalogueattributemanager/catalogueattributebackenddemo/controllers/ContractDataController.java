@@ -10,7 +10,7 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
-@RequestMapping(value = "/contract-data")
+@RequestMapping(value = "/api/contract-data")
 public class ContractDataController {
 
     private List<ContractData> contractData = new ArrayList<>();

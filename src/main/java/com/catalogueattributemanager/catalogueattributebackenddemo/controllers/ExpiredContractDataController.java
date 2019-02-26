@@ -12,7 +12,7 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
-@RequestMapping(value = "/expired-contract-data")
+@RequestMapping(value = "/api/expired-contract-data")
 public class ExpiredContractDataController {
 
     private List<ContractData> expiredContractData = new ArrayList<>();
